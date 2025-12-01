@@ -10,12 +10,19 @@ import com.booking.bookingservice.repo.BookingRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
+import org.springframework.test.context.TestPropertySource;
 
 import java.util.Date;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
+
+@TestPropertySource(properties = {
+	    "spring.cloud.config.enabled=false",
+	    "spring.cloud.config.import-check.enabled=false",
+	    "eureka.client.enabled=false"
+	})
 
 public class BookingServiceTest {
 

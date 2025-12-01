@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.List;
@@ -16,6 +17,12 @@ import java.util.List;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+
+@TestPropertySource(properties = {
+	    "spring.cloud.config.enabled=false",
+	    "spring.cloud.config.import-check.enabled=false",
+	    "eureka.client.enabled=false"
+	})
 
 @WebMvcTest(FlightController.class)
 class FlightControllerTest {
