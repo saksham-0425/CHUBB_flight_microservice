@@ -1,5 +1,6 @@
 package com.flight.flightservice.controller;
 
+import com.flight.flightservice.dto.FlightResponseDTO;
 import com.flight.flightservice.model.Flight;
 import com.flight.flightservice.service.FlightService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -28,10 +29,22 @@ public class FlightController {
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Add a new flight", description = "Creates a new flight record")
     @ApiResponse(responseCode = "201", description = "Flight created successfully")
-    public Flight addFlight(@RequestBody Flight flight) {
+    public FlightResponseDTO addFlight(@RequestBody Flight flight) {
         log.info("Request received to add flight");
-        return service.addFlight(flight);
+
+        Flight savedFlight = service.addFlight(flight);
+
+        return new FlightResponseDTO(
+                savedFlight.getId(),
+                savedFlight.getAirline(),
+                savedFlight.getSource(),
+                savedFlight.getDestination(),
+                savedFlight.getAvailableSeats()
+
+        );
     }
+
+
 
     // -------------------- SEARCH FLIGHTS --------------------
     @GetMapping("/search")
