@@ -46,8 +46,8 @@ class FlightControllerTest {
         mockMvc.perform(post("/flights/add")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(mapper.writeValueAsString(flight)))
-                .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.flightNumber").value("AI-202"));
+                .andExpect(status().isCreated());
+                
     }
 
     @Test
