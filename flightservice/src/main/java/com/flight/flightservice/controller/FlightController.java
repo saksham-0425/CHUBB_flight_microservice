@@ -24,7 +24,6 @@ public class FlightController {
         this.service = service;
     }
 
-    // -------------------- ADD FLIGHT --------------------
     @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Add a new flight", description = "Creates a new flight record")
@@ -44,9 +43,6 @@ public class FlightController {
         );
     }
 
-
-
-    // -------------------- SEARCH FLIGHTS --------------------
     @GetMapping("/search")
     @Operation(summary = "Search flights", description = "Searches flights by source, destination and date")
     public List<Flight> searchFlights(
@@ -57,7 +53,6 @@ public class FlightController {
         return service.searchFlights(source, destination, date);
     }
 
-    // -------------------- CHECK SEAT AVAILABILITY (INTERNAL) --------------------
     @GetMapping("/internal/{id}/check")
     @Operation(summary = "Check flight availability (internal API)")
     public boolean checkAvailability(@PathVariable String id) {
@@ -66,7 +61,6 @@ public class FlightController {
         return flight.getAvailableSeats() > 0;
     }
 
-    // -------------------- REDUCE SEATS (INTERNAL) --------------------
     @PutMapping("/internal/{id}/reduce")
     @Operation(summary = "Reduce seats (internal API)")
     public boolean reduceSeats(@PathVariable String id, @RequestParam int count) {
@@ -74,7 +68,6 @@ public class FlightController {
         return service.reduceSeats(id, count);
     }
 
-    // -------------------- INCREASE SEATS (INTERNAL) --------------------
     @PutMapping("/internal/{id}/increase")
     @Operation(summary = "Increase seats (internal API)")
     public void increaseSeats(@PathVariable String id, @RequestParam int count) {

@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class GlobalExceptionHandler {
-    private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
+    @SuppressWarnings("unused")
+	private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
     @ExceptionHandler(BookingNotFoundException.class)
     public ResponseEntity<String> handleNotFound(BookingNotFoundException ex) {
@@ -34,9 +35,4 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(500).body("Internal Server Error");
     }
 
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<String> handleAll(Exception ex) {
-//        log.error("Unhandled error", ex);
-//        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Internal server error");
-//    }
 }

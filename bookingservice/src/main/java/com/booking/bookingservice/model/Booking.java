@@ -15,6 +15,6 @@ public class Booking {
     private String passengerName;
     private String email;
     private int seats;
-    private String status; // CONFIRMED / CANCELLED
+    private String status; 
     private Date bookingDate;
 }

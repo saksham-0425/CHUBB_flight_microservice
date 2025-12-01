@@ -11,7 +11,7 @@ public class FlightResponseDTO {
 
 
     public FlightResponseDTO() {
-        // default constructor
+
     }
 
     public FlightResponseDTO(String id,
@@ -29,9 +29,6 @@ public class FlightResponseDTO {
         this.availableSeats = availableSeats;
 
     }
-
-    // ------- GETTERS & SETTERS -------
-
     public String getId() {
         return id;
     }

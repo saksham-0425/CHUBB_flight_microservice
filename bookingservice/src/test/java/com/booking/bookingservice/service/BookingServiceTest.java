@@ -9,10 +9,8 @@ import com.booking.bookingservice.producer.EmailProducer;
 import com.booking.bookingservice.repo.BookingRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.ArgumentCaptor;
-import org.springframework.test.context.TestPropertySource;
 
-import java.util.Date;
+import org.springframework.test.context.TestPropertySource;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -40,9 +38,6 @@ public class BookingServiceTest {
         bookingService = new BookingService(bookingRepository, flightClient, emailProducer);
     }
 
-    // --------------------------------------------------------------------
-    // 1. SUCCESSFUL BOOKING
-    // --------------------------------------------------------------------
     @Test
     void testBookTicket_Success() {
         BookingRequest request = new BookingRequest("FL123", "John", "john@gmail.com", 2);
@@ -57,14 +52,10 @@ public class BookingServiceTest {
         verify(emailProducer, times(1)).sendEmail(any(EmailNotification.class));
     }
 
-    // --------------------------------------------------------------------
-    // 2. FLIGHT SERVICE DOWN → FALLBACK SIGNAL (false returned)
-    // --------------------------------------------------------------------
     @Test
     void testBookTicket_FlightServiceDown() {
         BookingRequest request = new BookingRequest("FL123", "John", "john@gmail.com", 2);
 
-        // fallback returns false → service down
         when(flightClient.checkAvailability("FL123")).thenReturn(false);
 
         Exception ex = assertThrows(FlightServiceDownException.class,
@@ -73,9 +64,6 @@ public class BookingServiceTest {
         assertEquals("Flight Service is DOWN", ex.getMessage());
     }
 
-    // --------------------------------------------------------------------
-    // 3. SEATS NOT AVAILABLE (availability = true but reduceSeats = false)
-    // --------------------------------------------------------------------
     @Test
     void testBookTicket_SeatsNotAvailable() {
         BookingRequest request = new BookingRequest("FL123", "John", "john@gmail.com", 2);
@@ -89,9 +77,6 @@ public class BookingServiceTest {
         assertEquals("Flight Service is DOWN", ex.getMessage());
     }
 
-    // --------------------------------------------------------------------
-    // 4. CANCEL BOOKING SUCCESSFULLY
-    // --------------------------------------------------------------------
     @Test
     void testCancelBooking_Success() {
 
@@ -110,9 +95,6 @@ public class BookingServiceTest {
         verify(emailProducer, times(1)).sendEmail(any(EmailNotification.class));
     }
 
-    // --------------------------------------------------------------------
-    // 5. CANCEL BOOKING ALREADY CANCELLED — should not update again
-    // --------------------------------------------------------------------
     @Test
     void testCancelBooking_AlreadyCancelled() {
 

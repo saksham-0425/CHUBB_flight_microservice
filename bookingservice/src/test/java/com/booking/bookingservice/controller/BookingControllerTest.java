@@ -6,7 +6,7 @@ import com.booking.bookingservice.model.Booking;
 import com.booking.bookingservice.service.BookingService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -42,15 +42,13 @@ public class BookingControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    @MockBean
+    @SuppressWarnings("removal")
+	@MockBean
     private BookingService bookingService;
 
     @Autowired
     private ObjectMapper objectMapper;
 
-    // --------------------------------------------------
-    // 1. CREATE BOOKING TEST
-    // --------------------------------------------------
     @Test
     void testCreateBooking_Success() throws Exception {
 
@@ -78,9 +76,6 @@ public class BookingControllerTest {
         .andExpect(jsonPath("$.status").value("CONFIRMED"));
     }
 
-    // --------------------------------------------------
-    // 2. GET BOOKING BY ID
-    // --------------------------------------------------
     @Test
     void testGetBookingById() throws Exception {
 
@@ -101,9 +96,6 @@ public class BookingControllerTest {
                 .andExpect(jsonPath("$.passengerName").value("Alice"));
     }
 
-    // --------------------------------------------------
-    // 3. GET BOOKINGS BY EMAIL
-    // --------------------------------------------------
     @Test
     void testGetBookingsByEmail() throws Exception {
 
@@ -129,10 +121,6 @@ public class BookingControllerTest {
 
     }
 
-
-    // --------------------------------------------------
-    // 4. CANCEL BOOKING
-    // --------------------------------------------------
     @Test
     void testCancelBooking() throws Exception {
 
@@ -147,9 +135,6 @@ public class BookingControllerTest {
                 .andExpect(jsonPath("$.status").value("CANCELLED"));
     }
 
-    // --------------------------------------------------
-    // 5. flightservice DOWN → SERVICE RETURNS 503
-    // --------------------------------------------------
     @Test
     void testCreateBooking_FlightServiceDown() throws Exception {
 

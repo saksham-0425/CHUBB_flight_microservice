@@ -40,7 +40,7 @@ public class BookingService {
         boolean available = flightClient.checkAvailability(req.getFlightId());
 
         if (!available) {
-            // If service is down, fallback returned false => detect that
+            
             throw new FlightServiceDownException("Flight Service is DOWN");
         }
 
@@ -59,7 +59,7 @@ public class BookingService {
 
         repository.save(booking);
 
-        // send email notification via RabbitMQ
+     
         emailProducer.sendEmail(new EmailNotification(
                 booking.getEmail(),
                 "Booking Confirmed",
@@ -70,7 +70,7 @@ public class BookingService {
         return booking;
     }
 
-    // Fallback for circuit breaker
+
     public Booking bookFallback(BookingRequest req, Throwable ex) {
         log.warn("Fallback triggered due to: {}", ex.toString());
 
@@ -95,10 +95,10 @@ public class BookingService {
         booking.setStatus("CANCELLED");
         repository.save(booking);
 
-        // restore seats
+
         flightClient.increaseSeats(booking.getFlightId(), booking.getSeats());
 
-        // optional: send cancellation email
+      
         emailProducer.sendEmail(new EmailNotification(
                 booking.getEmail(),
                 "Booking Cancelled",

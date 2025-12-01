@@ -7,17 +7,17 @@ public class FlightClientFallback implements FlightClient {
 
     @Override
     public boolean checkAvailability(String id) {
-        return false;  // service is down
+        return false;
     }
 
     @Override
     public boolean reduceSeats(String id, int count) {
-        return false;  // service is down
+        return false;  
     }
 
     @Override
     public void increaseSeats(String id, int count) {
-        // do nothing
+ 
     }
 }
 
