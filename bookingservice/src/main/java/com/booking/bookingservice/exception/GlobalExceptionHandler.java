@@ -25,6 +25,14 @@ public class GlobalExceptionHandler {
     public ResponseEntity<String> handleFlightServiceDown(FlightServiceDownException ex) {
         return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).body(ex.getMessage());
     }
+    
+    @ExceptionHandler(RuntimeException.class)
+    public ResponseEntity<String> handleRuntime(RuntimeException ex) {
+        if (ex.getMessage().contains("Flight Service is DOWN")) {
+            return ResponseEntity.status(503).body("Flight Service is DOWN");
+        }
+        return ResponseEntity.status(500).body("Internal Server Error");
+    }
 
 //    @ExceptionHandler(Exception.class)
 //    public ResponseEntity<String> handleAll(Exception ex) {
