@@ -21,7 +21,7 @@ public class EmailConsumer {
 
     @RabbitListener(queues = MQConfig.EMAIL_QUEUE)
     public void receive(EmailNotification notification) {
-        // send actual email
+        
         try {
             SimpleMailMessage msg = new SimpleMailMessage();
             msg.setTo(notification.getTo());
@@ -31,7 +31,7 @@ public class EmailConsumer {
             log.info("Email sent to {}", notification.getTo());
         } catch (Exception e) {
             log.error("Failed to send email to {}: {}", notification.getTo(), e.getMessage());
-            // consider retry or dead-lettering in prod
+           
         }
     }
 }
