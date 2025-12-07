@@ -1,0 +1,139 @@
+services:
+
+  mongodb:
+    image: mongo:7
+    container_name: mongodb
+    restart: always
+    ports:
+      - "27017:27017"
+    networks:
+      - appnet
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    restart: always
+    ports:
+      - "5672:5672"      
+      - "15672:15672"    
+    networks:
+      - appnet
+    environment:
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    healthcheck:
+      test: ["CMD", "rabbitmqctl", "status"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+
+
+  server:
+    build: ./server
+    container_name: server
+    ports:
+      - "8888:8888"
+    networks:
+      - appnet
+    restart: always
+    depends_on:
+      service-registry:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8888/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+
+  service-registry:
+    build: ./service-registry
+    container_name: service-registry
+    ports:
+      - "8761:8761"
+    networks:
+      - appnet
+    depends_on:
+      - mongodb
+      - rabbitmq
+    healthcheck:
+      test: ["CMD", "wget", "--spider", "http://localhost:8761"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 60s
+
+  api-gateway:
+    build: ./api-gateway
+    container_name: api-gateway
+    ports:
+      - "8765:8765"
+    networks:
+      - appnet
+    depends_on:
+      server:
+        condition: service_healthy
+      service-registry:
+        condition: service_healthy
+     
+  auth-service:
+    build: ./auth-service
+    container_name: auth-service
+    restart: always
+    networks:
+      - appnet
+    depends_on:
+      server:
+        condition: service_healthy
+      service-registry:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  flightservice:
+    build: ./flightservice
+    container_name: flightservice
+    networks:
+      - appnet
+    depends_on:
+      server:
+        condition: service_healthy
+      service-registry:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+  bookingservice:
+    build: ./bookingservice
+    container_name: bookingservice
+    networks:
+      - appnet
+    depends_on:
+      server:
+        condition: service_healthy
+      service-registry:
+        condition: service_healthy
+      mongodb:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+
+networks:
+  appnet:
+    driver: bridge

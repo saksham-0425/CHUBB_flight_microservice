@@ -15,6 +15,7 @@
         <module>flightservice</module>
         <module>server</module>
         <module>service-registry</module>
+        <module>auth-service</module>
     </modules>
 
     <properties>
