@@ -1,0 +1,9 @@
+package com.auth.auth_service.repository;
+
+import com.auth.auth_service.model.AppUser;
+import org.springframework.data.mongodb.repository.MongoRepository;
+import java.util.Optional;
+
+public interface UserRepository extends MongoRepository<AppUser, String> {
+    Optional<AppUser> findByEmail(String email);
+}
