@@ -22,6 +22,9 @@ public class FlightService {
 
     public Flight addFlight(Flight flight) {
         log.info("Adding flight: {}", flight.getFlightNumber());
+        if (flight.getSource().equalsIgnoreCase(flight.getDestination())) {
+            throw new IllegalArgumentException("Source and destination cannot be same");
+        }
         return repository.save(flight);
     }
 

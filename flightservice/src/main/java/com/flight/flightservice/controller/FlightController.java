@@ -8,6 +8,7 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,24 +25,23 @@ public class FlightController {
         this.service = service;
     }
 
-    @PostMapping("/add")
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Add a new flight", description = "Creates a new flight record")
     @ApiResponse(responseCode = "201", description = "Flight created successfully")
-    public FlightResponseDTO addFlight(@RequestBody Flight flight) {
-        log.info("Request received to add flight");
+    @PostMapping("/add")
+    public ResponseEntity<String> addFlight(@RequestBody Flight flight) {
+    	log.info("Request received to add flight");
+    	
+    	if (flight.getSource().equalsIgnoreCase(flight.getDestination())) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body("Source and destination cannot be same");
+        }
 
-        Flight savedFlight = service.addFlight(flight);
+        service.addFlight(flight);
 
-        return new FlightResponseDTO(
-                savedFlight.getId(),
-                savedFlight.getAirline(),
-                savedFlight.getSource(),
-                savedFlight.getDestination(),
-                savedFlight.getAvailableSeats()
-
-        );
+        return new ResponseEntity<>("success", HttpStatus.CREATED);
     }
+
 
     @GetMapping("/search")
     @Operation(summary = "Search flights", description = "Searches flights by source, destination and date")

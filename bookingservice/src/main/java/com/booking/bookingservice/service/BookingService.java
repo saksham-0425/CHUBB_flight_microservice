@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class BookingService {
@@ -38,6 +39,12 @@ public class BookingService {
         log.info("Attempt to book {} seats on flight {}", req.getSeats(), req.getFlightId());
 
         boolean available = flightClient.checkAvailability(req.getFlightId());
+        
+        Optional<Booking> existing = repository.findByFlightIdAndEmail(req.getFlightId(), req.getEmail());
+
+        if(existing.isPresent()) {
+            throw new IllegalStateException("Booking already exists for this user and flight");
+        }
 
         if (!available) {
             

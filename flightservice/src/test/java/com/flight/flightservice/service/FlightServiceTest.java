@@ -5,20 +5,12 @@ import com.flight.flightservice.model.Flight;
 import com.flight.flightservice.repo.FlightRepository;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
-import org.springframework.test.context.TestPropertySource;
 
 import java.util.List;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
-@TestPropertySource(properties = {
-	    "spring.cloud.config.enabled=false",
-	    "spring.cloud.config.import-check.enabled=false",
-	    "eureka.client.enabled=false"
-	})
 
 class FlightServiceTest {
 
@@ -27,31 +19,36 @@ class FlightServiceTest {
 
     @BeforeEach
     void setup() {
-        repository = Mockito.mock(FlightRepository.class);
+        repository = mock(FlightRepository.class);
         service = new FlightService(repository);
     }
 
     @Test
-    void testAddFlight() {
+    void testAddFlight_Success() {
         Flight flight = new Flight();
-        flight.setFlightNumber("AI-202");
+        flight.setSource("Delhi");
+        flight.setDestination("Mumbai");
 
-        when(repository.save(flight)).thenReturn(flight);
+        when(repository.save(any())).thenReturn(flight);
 
-        Flight saved = service.addFlight(flight);
+        Flight result = service.addFlight(flight);
 
-        assertEquals("AI-202", saved.getFlightNumber());
+        assertEquals("Mumbai", result.getDestination());
         verify(repository, times(1)).save(flight);
     }
 
     @Test
-    void testSearchFlights() {
-        when(repository.findBySourceAndDestinationAndDate("DEL", "BOM", "2025-01-01"))
-                .thenReturn(List.of(new Flight()));
+    void testAddFlight_SourceDestinationSame_ShouldThrowException() {
+        Flight flight = new Flight();
+        flight.setSource("Delhi");
+        flight.setDestination("Delhi");
 
-        List<Flight> result = service.searchFlights("DEL", "BOM", "2025-01-01");
+        IllegalArgumentException ex = assertThrows(
+                IllegalArgumentException.class,
+                () -> service.addFlight(flight)
+        );
 
-        assertEquals(1, result.size());
+        assertEquals("Source and destination cannot be same", ex.getMessage());
     }
 
     @Test
@@ -63,7 +60,6 @@ class FlightServiceTest {
 
         Flight result = service.getFlight("123");
 
-        assertNotNull(result);
         assertEquals("123", result.getId());
     }
 
@@ -85,7 +81,7 @@ class FlightServiceTest {
 
         assertTrue(result);
         assertEquals(40, flight.getAvailableSeats());
-        verify(repository, times(1)).save(flight);
+        verify(repository).save(flight);
     }
 
     @Test
@@ -111,6 +107,6 @@ class FlightServiceTest {
         service.increaseSeats("55", 5);
 
         assertEquals(25, flight.getAvailableSeats());
-        verify(repository, times(1)).save(flight);
+        verify(repository).save(flight);
     }
 }

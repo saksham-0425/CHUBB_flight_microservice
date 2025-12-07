@@ -3,6 +3,7 @@ package com.booking.bookingservice.controller;
 import com.booking.bookingservice.dto.BookingRequest;
 import com.booking.bookingservice.exception.GlobalExceptionHandler;
 import com.booking.bookingservice.model.Booking;
+import com.booking.bookingservice.repo.BookingRepository;
 import com.booking.bookingservice.service.BookingService;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.Test;
@@ -20,7 +21,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Optional;
 
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 
@@ -48,6 +52,8 @@ public class BookingControllerTest {
 
     @Autowired
     private ObjectMapper objectMapper;
+    
+    private BookingRepository repository;
 
     @Test
     void testCreateBooking_Success() throws Exception {
@@ -152,4 +158,19 @@ public class BookingControllerTest {
         .andExpect(status().isServiceUnavailable())
         .andExpect(content().string("Flight Service is DOWN"));
     }
+    
+    @Test
+    void testDuplicateBooking_NotAllowed() {
+
+        when(repository.findByFlightIdAndEmail("FL123", "user@mail.com"))
+                .thenReturn(Optional.of(new Booking()));
+
+        BookingRequest request = new BookingRequest("FL123", "User", "user@mail.com", 2);
+
+        Exception ex = assertThrows(IllegalStateException.class,
+                () -> bookingService.bookTicket(request));
+
+        assertEquals("Booking already exists for this user and flight", ex.getMessage());
+    }
+
 }
