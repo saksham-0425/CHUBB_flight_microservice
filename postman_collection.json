@@ -1,0 +1,229 @@
+{
+	"info": {
+		"_postman_id": "13734b68-3ea2-443d-90d8-09d527223946",
+		"name": "Flight Booking Microservice",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43217241"
+	},
+	"item": [
+		{
+			"name": "signup",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add a new flight",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"flightNumber\": \"AI-202\",\r\n  \"airline\": \"Air India\",\r\n  \"source\": \"DEL\",\r\n  \"destination\": \"MUM\",\r\n  \"date\": \"2025-01-10\",\r\n  \"availableSeats\": 50\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/flightservice/flights/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"flightservice",
+						"flights",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "book a ticket",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"flightId\": \"692d49b760228433105ba760\",\r\n  \"passengerName\":\"Saksham Gupta\",\r\n  \"email\":\"sgup2510@gmail.com\",\r\n  \"seats\":2\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/bookingservice/booking/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"bookingservice",
+						"booking",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "booking history by email",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "(internal) seat available or not",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/flightservice/flights/internal/692c23027ac5177fbf932138/check",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"flightservice",
+						"flights",
+						"internal",
+						"692c23027ac5177fbf932138",
+						"check"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "search flight",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "(internal) reduce seats by flight id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/flightservice/flights/internal/692c23027ac5177fbf932138/reduce?count=15",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"flightservice",
+						"flights",
+						"internal",
+						"692c23027ac5177fbf932138",
+						"reduce"
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "15"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "(internal) increase seats by flight id",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8765/flightservice/flights/internal/692c23027ac5177fbf932138/increase?count=50",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"flightservice",
+						"flights",
+						"internal",
+						"692c23027ac5177fbf932138",
+						"increase"
+					],
+					"query": [
+						{
+							"key": "count",
+							"value": "50"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "cancel a ticket",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "check for circuit breaker",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"flightId\": \"692d5183f0c4054263f8e959\",\r\n  \"passengerName\":\"Sarthak\",\r\n  \"email\":\"sarthakshahi@gmail.com\",\r\n  \"seats\":1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8765/bookingservice/booking/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8765",
+					"path": [
+						"bookingservice",
+						"booking",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "access protected route without header",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

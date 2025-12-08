@@ -44,3 +44,6 @@
 2025-12-08 07:06:48 INFO  c.b.b.BookingserviceApplication - Started BookingserviceApplication in 41.676 seconds (process running for 44.841)
 2025-12-08 07:11:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2025-12-08 07:16:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:21:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:26:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:31:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration

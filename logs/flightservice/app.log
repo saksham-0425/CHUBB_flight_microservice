@@ -39,3 +39,6 @@
 2025-12-08 07:06:46 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FLIGHTSERVICE/622c72b8db2b:flightservice:0 - registration status: 204
 2025-12-08 07:11:46 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
 2025-12-08 07:16:46 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:21:46 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:26:46 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:31:46 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
