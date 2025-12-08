@@ -82,6 +82,8 @@ services:
       - "8765:8765"
     networks:
       - appnet
+    volumes:
+      - ./logs/api-gateway:/app/logs
     depends_on:
       server:
         condition: service_healthy
@@ -94,6 +96,8 @@ services:
     restart: always
     networks:
       - appnet
+    volumes:
+      - ./logs/auth-service:/app/logs
     depends_on:
       server:
         condition: service_healthy
@@ -109,6 +113,8 @@ services:
     container_name: flightservice
     networks:
       - appnet
+    volumes:
+      - ./logs/flightservice:/app/logs
     depends_on:
       server:
         condition: service_healthy
@@ -124,6 +130,8 @@ services:
     container_name: bookingservice
     networks:
       - appnet
+    volumes:
+      - ./logs/bookingservice:/app/logs
     depends_on:
       server:
         condition: service_healthy
