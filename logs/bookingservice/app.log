@@ -1,3 +1,46 @@
 2025-12-08 07:06:21 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://server:8888
 2025-12-08 07:06:22 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=bookingservice, profiles=[default], label=null, version=af83fdce6b76ee721af13e0cb0482b4c329a9e70, state=
 2025-12-08 07:06:22 INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/saksham-0425/CHUBB_quizapp_configserver/bookingservice.properties'}]
+2025-12-08 07:06:22 INFO  c.b.b.BookingserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-08 07:06:23 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
+2025-12-08 07:06:23 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=bookingservice, profiles=[default], label=null, version=af83fdce6b76ee721af13e0cb0482b4c329a9e70, state=
+2025-12-08 07:06:26 DEBUG o.s.c.o.FeignClientsRegistrar$1 - Identified candidate component class: URL [jar:nested:/app/app.jar/!BOOT-INF/classes/!/com/booking/bookingservice/feign/FlightClient.class]
+2025-12-08 07:06:30 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-12-08 07:06:31 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 1226 ms. Found 1 MongoDB repository interface.
+2025-12-08 07:06:35 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=a6236141-cd0d-3f2c-8d0c-426eeecf4a09
+2025-12-08 07:06:38 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2025-12-08 07:06:38 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-08 07:06:38 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-08 07:06:38 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-08 07:06:38 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 15442 ms
+2025-12-08 07:06:40 INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.2.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.167.4-microsoft-standard-WSL2"}, "platform": "Java/Eclipse Adoptium/17.0.17+10", "env": {"container": {"runtime": "docker"}}} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5eb2972f, com.mongodb.Jep395RecordCodecProvider@29699283, com.mongodb.KotlinCodecProvider@5d32c1c7]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[mongodb:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2025-12-08 07:06:41 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=mongodb:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=190883646, minRoundTripTimeNanos=0}
+2025-12-08 07:06:42 DEBUG o.s.c.o.FeignClientFactoryBean - Creating a FeignClientFactoryBean.
+2025-12-08 07:06:45 INFO  o.s.c.o.FeignClientFactoryBean - For 'flightservice' URL not provided. Will try picking an instance via load-balancing.
+2025-12-08 07:06:47 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-08 07:06:47 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-08 07:06:47 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 35473 (http) with context path '/'
+2025-12-08 07:06:47 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 35473
+2025-12-08 07:06:47 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-08 07:06:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-08 07:06:47 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765177607937 with initial instances count: 1
+2025-12-08 07:06:47 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application BOOKINGSERVICE with eureka with status UP
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765177607943, current=UP, previous=STARTING]
+2025-12-08 07:06:47 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOKINGSERVICE/ba164889f241:bookingservice:0: registering service...
+2025-12-08 07:06:47 INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [rabbitmq:5672]
+2025-12-08 07:06:48 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_BOOKINGSERVICE/ba164889f241:bookingservice:0 - registration status: 204
+2025-12-08 07:06:48 INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2184962c:0/SimpleConnection@23c61c1b [delegate=amqp://guest@172.21.0.3:5672/, localPort=39590]
+2025-12-08 07:06:48 INFO  c.b.b.BookingserviceApplication - Started BookingserviceApplication in 41.676 seconds (process running for 44.841)
+2025-12-08 07:11:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-08 07:16:47 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
