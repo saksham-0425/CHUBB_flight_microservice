@@ -1,6 +1,7 @@
 package com.booking.bookingservice.controller;
 
 import com.booking.bookingservice.dto.BookingRequest;
+import com.booking.bookingservice.dto.BookingResponse;
 import com.booking.bookingservice.model.Booking;
 import com.booking.bookingservice.service.BookingService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -24,13 +25,28 @@ public class BookingController {
     }
 
     @PostMapping("/create")
-    @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Create a booking")
-    public ResponseEntity<String> createBooking(@RequestBody BookingRequest req) {
+    public ResponseEntity<BookingResponse> createBooking(
+            @RequestBody BookingRequest req) {
+
         log.info("Create booking request for flight {}", req.getFlightId());
-        service.bookTicket(req);
-        return new ResponseEntity<>("success", HttpStatus.CREATED);
+
+        Booking booking = service.bookTicket(req);
+
+        BookingResponse response = new BookingResponse(
+                booking.getPnr(),
+                booking.getFlightId(),
+                booking.getPassengerName(),
+                booking.getEmail(),
+                booking.getSeats(),
+                booking.getStatus(),
+                booking.getBookingDate()
+        );
+
+        return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
+
+
 
     @PutMapping("/cancel/{id}")
     @Operation(summary = "Cancel booking")
@@ -50,4 +66,45 @@ public class BookingController {
     public List<Booking> history(@RequestParam String email) {
         return service.getBookingsByEmail(email);
     }
+    
+    @GetMapping("/pnr/{pnr}")
+    public ResponseEntity<BookingResponse> getBookingByPnr(
+            @PathVariable String pnr) {
+
+        Booking booking = service.getBookingByPnr(pnr);
+
+        BookingResponse response = new BookingResponse(
+                booking.getPnr(),
+                booking.getFlightId(),
+                booking.getPassengerName(),
+                booking.getEmail(),
+                booking.getSeats(),
+                booking.getStatus(),
+                booking.getBookingDate()
+        );
+
+        return ResponseEntity.ok(response);
+    }
+
+    
+    @PutMapping("/cancel/pnr/{pnr}")
+    @Operation(summary = "Cancel booking by PNR")
+    public BookingResponse cancelBookingByPnr(@PathVariable String pnr) {
+
+        log.info("Cancel booking by PNR {}", pnr);
+
+        Booking booking = service.cancelBookingByPnr(pnr);
+
+        return new BookingResponse(
+                booking.getPnr(),
+                booking.getFlightId(),
+                booking.getPassengerName(),
+                booking.getEmail(),
+                booking.getSeats(),
+                booking.getStatus(),
+                booking.getBookingDate()
+        );
+    }
+
+
 }

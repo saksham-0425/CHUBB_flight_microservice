@@ -1,12 +1,16 @@
 package com.flight.flightservice.service;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.flight.flightservice.exception.FlightNotFoundException;
 import com.flight.flightservice.model.Flight;
 import com.flight.flightservice.repo.FlightRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.nio.charset.StandardCharsets;
 import java.util.List;
 
 @Service
@@ -66,4 +70,27 @@ public class FlightService {
 
         log.info("Successfully increased seats. New seat count: {}", flight.getAvailableSeats());
     }
+    
+    public int uploadFlightsJson(MultipartFile file) {
+        try {
+            String content = new String(file.getBytes(), StandardCharsets.UTF_8);
+
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.findAndRegisterModules();   // handles date/time well
+
+            List<Flight> flights = mapper.readValue(
+                    content,
+                    new TypeReference<List<Flight>>() {}
+            );
+
+            repository.saveAll(flights);
+
+            return flights.size();
+
+        } catch (Exception e) {
+            log.error("Failed to process JSON file: {}", e.getMessage());
+            throw new RuntimeException("Invalid JSON format. Upload failed.");
+        }
+    }
 }
+

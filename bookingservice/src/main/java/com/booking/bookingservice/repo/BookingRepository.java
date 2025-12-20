@@ -9,4 +9,5 @@ import java.util.Optional;
 public interface BookingRepository extends MongoRepository<Booking, String> {
     List<Booking> findByEmail(String email);
     Optional<Booking> findByFlightIdAndEmail(String flightId, String email);
+    Optional<Booking> findByPnr(String pnr);
 }

@@ -1,308 +1,195 @@
-2025-12-08 07:06:18 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
-2025-12-08 07:06:18 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
-2025-12-08 07:06:18 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
-2025-12-08 07:06:18 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-08 07:06:18 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
-2025-12-08 07:06:18 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=af83fdce6b76ee721af13e0cb0482b4c329a9e70, state=
-2025-12-08 07:06:23 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=73eaaeb0-6765-3a3b-b98e-b3699747e12a
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
-2025-12-08 07:06:31 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2025-12-08 07:06:33 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-12-08 07:06:33 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-12-08 07:06:34 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-12-08 07:06:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-12-08 07:06:34 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-12-08 07:06:37 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-12-08 07:06:37 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-12-08 07:06:37 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-12-08 07:06:37 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765177597116 with initial instances count: 1
-2025-12-08 07:06:37 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
-2025-12-08 07:06:37 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765177597150, current=UP, previous=STARTING]
-2025-12-08 07:06:37 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2e0bcbf0070f:api-gateway:8765: registering service...
-2025-12-08 07:06:38 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2e0bcbf0070f:api-gateway:8765 - registration status: 204
-2025-12-08 07:06:39 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
-2025-12-08 07:06:39 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
-2025-12-08 07:06:39 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 33.402 seconds (process running for 35.789)
-2025-12-08 07:11:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:16:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:21:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:26:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:31:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:36:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:41:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:46:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:51:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 07:56:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:01:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:06:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:11:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:16:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:21:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:26:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:31:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:36:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:41:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:46:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:51:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 08:56:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:01:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:06:34 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:11:33 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:16:33 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:21:33 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:26:33 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:31:33 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 09:32:33 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
-2025-12-08 09:32:33 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765186353226, current=DOWN, previous=UP]
-2025-12-08 09:32:33 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2e0bcbf0070f:api-gateway:8765: registering service...
-2025-12-08 09:32:33 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-08 09:32:33 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-12-08 09:32:33 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2e0bcbf0070f:api-gateway:8765 - registration status: 204
-2025-12-08 09:32:35 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-12-08 09:32:38 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2025-12-08 09:32:38 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2e0bcbf0070f:api-gateway:8765 - deregister  status: 200
-2025-12-08 09:32:38 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2025-12-08 12:18:08 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
-2025-12-08 12:18:08 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
-2025-12-08 12:18:08 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
-2025-12-08 12:18:08 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-08 12:18:08 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
-2025-12-08 12:18:08 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=af83fdce6b76ee721af13e0cb0482b4c329a9e70, state=
-2025-12-08 12:18:17 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=73eaaeb0-6765-3a3b-b98e-b3699747e12a
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
-2025-12-08 12:18:33 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2025-12-08 12:18:38 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-12-08 12:18:39 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-12-08 12:18:39 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-12-08 12:18:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-12-08 12:18:40 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-12-08 12:18:46 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-12-08 12:18:46 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-12-08 12:18:46 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-12-08 12:18:46 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765196326705 with initial instances count: 1
-2025-12-08 12:18:46 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
-2025-12-08 12:18:46 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765196326804, current=UP, previous=STARTING]
-2025-12-08 12:18:46 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/3cd453604b45:api-gateway:8765: registering service...
-2025-12-08 12:18:47 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/3cd453604b45:api-gateway:8765 - registration status: 204
-2025-12-08 12:18:50 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
-2025-12-08 12:18:50 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
-2025-12-08 12:18:50 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 54.324 seconds (process running for 58.002)
-2025-12-08 12:23:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 12:28:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 12:33:19 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
-2025-12-08 12:33:19 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765197199988, current=DOWN, previous=UP]
-2025-12-08 12:33:19 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/3cd453604b45:api-gateway:8765: registering service...
-2025-12-08 12:33:19 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-08 12:33:20 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-12-08 12:33:20 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/3cd453604b45:api-gateway:8765 - registration status: 204
-2025-12-08 12:33:22 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-12-08 12:33:25 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2025-12-08 12:33:25 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/3cd453604b45:api-gateway:8765 - deregister  status: 200
-2025-12-08 12:33:25 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2025-12-08 12:34:34 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
-2025-12-08 12:34:34 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
-2025-12-08 12:34:34 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
-2025-12-08 12:34:34 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-08 12:34:34 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
-2025-12-08 12:34:34 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=af83fdce6b76ee721af13e0cb0482b4c329a9e70, state=
-2025-12-08 12:34:38 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=73eaaeb0-6765-3a3b-b98e-b3699747e12a
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
-2025-12-08 12:34:46 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2025-12-08 12:34:48 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-12-08 12:34:48 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-12-08 12:34:49 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-12-08 12:34:49 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-12-08 12:34:49 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-12-08 12:34:51 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-12-08 12:34:51 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-12-08 12:34:51 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-12-08 12:34:51 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765197291548 with initial instances count: 1
-2025-12-08 12:34:51 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
-2025-12-08 12:34:51 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765197291570, current=UP, previous=STARTING]
-2025-12-08 12:34:51 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765: registering service...
-2025-12-08 12:34:51 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765 - registration status: 204
-2025-12-08 12:34:53 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
-2025-12-08 12:34:53 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
-2025-12-08 12:34:53 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 29.7 seconds (process running for 33.11)
-2025-12-08 12:37:56 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
-2025-12-08 12:37:56 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765197476978, current=DOWN, previous=UP]
-2025-12-08 12:37:56 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765: registering service...
-2025-12-08 12:37:56 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-08 12:37:57 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-12-08 12:37:57 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765 - registration status: 204
-2025-12-08 12:37:59 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-12-08 12:38:02 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2025-12-08 12:38:02 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765 - deregister  status: 200
-2025-12-08 12:38:02 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2025-12-08 12:42:27 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
-2025-12-08 12:42:27 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
-2025-12-08 12:42:27 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
-2025-12-08 12:42:27 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-08 12:42:27 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
-2025-12-08 12:42:27 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=af83fdce6b76ee721af13e0cb0482b4c329a9e70, state=
-2025-12-08 12:42:31 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=73eaaeb0-6765-3a3b-b98e-b3699747e12a
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
-2025-12-08 12:42:36 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2025-12-08 12:42:38 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-12-08 12:42:39 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-12-08 12:42:39 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-12-08 12:42:39 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-12-08 12:42:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 12:42:40 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-12-08 12:42:40 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-12-08 12:42:40 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-12-08 12:42:40 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-12-08 12:42:40 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-12-08 12:42:40 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-12-08 12:42:40 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-12-08 12:42:42 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-12-08 12:42:42 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-12-08 12:42:42 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-12-08 12:42:42 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765197762920 with initial instances count: 1
-2025-12-08 12:42:42 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
-2025-12-08 12:42:42 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765197762975, current=UP, previous=STARTING]
-2025-12-08 12:42:42 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765: registering service...
-2025-12-08 12:42:43 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765 - registration status: 204
-2025-12-08 12:42:44 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
-2025-12-08 12:42:44 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
-2025-12-08 12:42:44 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 28.547 seconds (process running for 31.941)
-2025-12-08 12:47:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 12:52:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 12:57:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 13:02:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 13:07:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 13:12:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 13:17:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 13:20:04 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
-2025-12-08 13:20:04 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765200004885, current=DOWN, previous=UP]
-2025-12-08 13:20:04 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765: registering service...
-2025-12-08 13:20:04 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765 - registration status: 204
-2025-12-08 13:20:04 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-08 13:20:04 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-12-08 13:20:06 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-12-08 13:20:09 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2025-12-08 13:20:09 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/c3211561476d:api-gateway:8765 - deregister  status: 200
-2025-12-08 13:20:09 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
-2025-12-08 13:59:23 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
-2025-12-08 13:59:24 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
-2025-12-08 13:59:24 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
-2025-12-08 13:59:24 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
-2025-12-08 13:59:24 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
-2025-12-08 13:59:24 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=af83fdce6b76ee721af13e0cb0482b4c329a9e70, state=
-2025-12-08 13:59:27 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=73eaaeb0-6765-3a3b-b98e-b3699747e12a
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
-2025-12-08 13:59:38 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
-2025-12-08 13:59:42 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
-2025-12-08 13:59:43 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
-2025-12-08 13:59:43 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
-2025-12-08 13:59:44 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
-2025-12-08 13:59:44 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
-2025-12-08 13:59:49 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
-2025-12-08 13:59:49 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
-2025-12-08 13:59:49 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
-2025-12-08 13:59:49 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1765202389520 with initial instances count: 1
-2025-12-08 13:59:49 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
-2025-12-08 13:59:49 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765202389619, current=UP, previous=STARTING]
-2025-12-08 13:59:49 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/bf1ae1a64526:api-gateway:8765: registering service...
-2025-12-08 13:59:50 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/bf1ae1a64526:api-gateway:8765 - registration status: 204
-2025-12-08 13:59:52 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
-2025-12-08 13:59:52 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
-2025-12-08 13:59:52 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 37.439 seconds (process running for 40.872)
-2025-12-08 14:00:47 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
-2025-12-08 14:00:47 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1765202447889, current=DOWN, previous=UP]
-2025-12-08 14:00:47 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/bf1ae1a64526:api-gateway:8765: registering service...
-2025-12-08 14:00:47 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2025-12-08 14:00:47 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
-2025-12-08 14:00:47 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/bf1ae1a64526:api-gateway:8765 - registration status: 204
-2025-12-08 14:00:49 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
-2025-12-08 14:00:52 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
-2025-12-08 14:00:52 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/bf1ae1a64526:api-gateway:8765 - deregister  status: 200
-2025-12-08 14:00:52 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-12-20 03:44:33 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
+2025-12-20 03:44:33 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
+2025-12-20 03:44:33 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
+2025-12-20 03:44:33 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 03:44:34 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
+2025-12-20 03:44:34 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=7be84bf1083f395bb49a318fbf0cbf3d214d5d31, state=
+2025-12-20 03:44:46 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c275109d-5ba6-3fab-8a13-d1a6ad18c8b0
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-12-20 03:45:05 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-12-20 03:45:11 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-20 03:45:12 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-20 03:45:12 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-20 03:45:13 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-20 03:45:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 03:45:13 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-20 03:45:13 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-20 03:45:13 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-20 03:45:13 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-20 03:45:13 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-20 03:45:13 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-20 03:45:14 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-20 03:45:18 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-20 03:45:18 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-20 03:45:18 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-20 03:45:19 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1766202319016 with initial instances count: 1
+2025-12-20 03:45:19 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
+2025-12-20 03:45:19 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766202319117, current=UP, previous=STARTING]
+2025-12-20 03:45:19 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/985cafbf5079:api-gateway:8765: registering service...
+2025-12-20 03:45:19 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/985cafbf5079:api-gateway:8765 - registration status: 204
+2025-12-20 03:45:22 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
+2025-12-20 03:45:22 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
+2025-12-20 03:45:23 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 76.011 seconds (process running for 85.275)
+2025-12-20 03:50:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 03:55:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:00:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:05:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:10:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:15:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:20:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:25:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:30:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:35:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:40:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:45:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:50:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 04:55:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:00:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:05:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:10:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:15:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:20:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:25:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:30:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:35:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:40:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:45:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:50:13 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:55:12 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 05:57:32 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
+2025-12-20 05:57:32 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766210252756, current=DOWN, previous=UP]
+2025-12-20 05:57:32 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/985cafbf5079:api-gateway:8765: registering service...
+2025-12-20 05:57:33 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 05:57:33 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/985cafbf5079:api-gateway:8765 - registration status: 204
+2025-12-20 05:57:34 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-12-20 05:57:40 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-12-20 09:01:44 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
+2025-12-20 09:01:44 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
+2025-12-20 09:01:44 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
+2025-12-20 09:01:44 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 09:01:45 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
+2025-12-20 09:01:45 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=7be84bf1083f395bb49a318fbf0cbf3d214d5d31, state=
+2025-12-20 09:02:04 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c275109d-5ba6-3fab-8a13-d1a6ad18c8b0
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-12-20 09:02:29 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-12-20 09:02:37 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-20 09:02:37 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-20 09:02:38 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-20 09:02:39 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-20 09:02:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:02:40 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-20 09:02:40 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-20 09:02:40 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-20 09:02:40 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-20 09:02:40 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-20 09:02:40 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-20 09:02:40 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-20 09:02:45 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-20 09:02:45 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-20 09:02:45 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-20 09:02:45 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1766221365639 with initial instances count: 1
+2025-12-20 09:02:45 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
+2025-12-20 09:02:45 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766221365682, current=UP, previous=STARTING]
+2025-12-20 09:02:45 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/128573ee9ebf:api-gateway:8765: registering service...
+2025-12-20 09:02:46 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/128573ee9ebf:api-gateway:8765 - registration status: 204
+2025-12-20 09:02:49 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
+2025-12-20 09:02:49 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
+2025-12-20 09:02:50 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 105.033 seconds (process running for 119.784)
+2025-12-20 09:07:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:12:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:17:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:22:40 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:27:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:32:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:37:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:42:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:47:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:52:39 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 09:56:30 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
+2025-12-20 09:56:30 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766224590070, current=DOWN, previous=UP]
+2025-12-20 09:56:30 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/128573ee9ebf:api-gateway:8765: registering service...
+2025-12-20 09:56:30 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 09:56:30 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/128573ee9ebf:api-gateway:8765 - registration status: 204
+2025-12-20 09:56:30 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-12-20 09:56:32 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-12-20 09:56:35 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-12-20 09:56:35 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/128573ee9ebf:api-gateway:8765 - deregister  status: 200
+2025-12-20 09:56:35 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient
+2025-12-20 10:02:27 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://localhost:8888
+2025-12-20 10:02:27 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Exception on Url - http://localhost:8888:org.springframework.web.client.ResourceAccessException: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused. Will be trying the next url if available
+2025-12-20 10:02:27 WARN  o.s.c.c.c.ConfigServicePropertySourceLocator - Could not locate PropertySource: I/O error on GET request for "http://localhost:8888/api-gateway/default": Connection refused
+2025-12-20 10:02:27 INFO  c.q.a.ApiGatewayApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 10:02:28 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888
+2025-12-20 10:02:28 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=api-gateway, profiles=[default], label=null, version=7be84bf1083f395bb49a318fbf0cbf3d214d5d31, state=
+2025-12-20 10:02:36 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=c275109d-5ba6-3fab-8a13-d1a6ad18c8b0
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [After]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Before]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Between]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Cookie]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Header]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Host]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Method]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Path]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Query]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [ReadBody]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [RemoteAddr]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [XForwardedRemoteAddr]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [Weight]
+2025-12-20 10:02:50 INFO  o.s.c.g.r.RouteDefinitionRouteLocator - Loaded RoutePredicateFactory [CloudFoundryRouteService]
+2025-12-20 10:02:54 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-20 10:02:55 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-20 10:02:56 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-20 10:02:56 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-20 10:02:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:02:57 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-20 10:02:57 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-20 10:02:57 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-20 10:02:57 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-20 10:02:57 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-20 10:02:57 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-20 10:02:57 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-20 10:03:01 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-20 10:03:01 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-20 10:03:01 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-20 10:03:01 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1766224981599 with initial instances count: 1
+2025-12-20 10:03:01 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application API-GATEWAY with eureka with status UP
+2025-12-20 10:03:01 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766224981646, current=UP, previous=STARTING]
+2025-12-20 10:03:01 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2da714ddc28a:api-gateway:8765: registering service...
+2025-12-20 10:03:02 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2da714ddc28a:api-gateway:8765 - registration status: 204
+2025-12-20 10:03:03 INFO  o.s.b.w.e.netty.NettyWebServer - Netty started on port 8765 (http)
+2025-12-20 10:03:03 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8765
+2025-12-20 10:03:03 INFO  c.q.a.ApiGatewayApplication - Started ApiGatewayApplication in 56.631 seconds (process running for 60.82)
+2025-12-20 10:03:17 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application API-GATEWAY with eureka with status DOWN
+2025-12-20 10:03:17 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766224997091, current=DOWN, previous=UP]
+2025-12-20 10:03:17 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2da714ddc28a:api-gateway:8765: registering service...
+2025-12-20 10:03:17 INFO  o.s.b.w.e.netty.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 10:03:17 INFO  o.s.b.w.e.netty.GracefulShutdown - Graceful shutdown complete
+2025-12-20 10:03:17 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2da714ddc28a:api-gateway:8765 - registration status: 204
+2025-12-20 10:03:19 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-12-20 10:03:22 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-12-20 10:03:22 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_API-GATEWAY/2da714ddc28a:api-gateway:8765 - deregister  status: 200
+2025-12-20 10:03:22 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

@@ -11,6 +11,7 @@ import java.util.Date;
 public class Booking {
     @Id
     private String id;
+    private String pnr;
     private String flightId;
     private String passengerName;
     private String email;

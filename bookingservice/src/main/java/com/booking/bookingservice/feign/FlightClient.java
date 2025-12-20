@@ -2,6 +2,7 @@ package com.booking.bookingservice.feign;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
+import com.booking.bookingservice.dto.FlightInternalDTO;
 
 @FeignClient(name = "flightservice", fallback = FlightClientFallback.class)
 public interface FlightClient {
@@ -14,4 +15,7 @@ public interface FlightClient {
 
     @PutMapping("/flights/internal/{id}/increase")
     void increaseSeats(@PathVariable("id") String id, @RequestParam("count") int count);
+   
+    @GetMapping("/flights/internal/{id}")
+    FlightInternalDTO getFlightById(@PathVariable("id") String id);
 }

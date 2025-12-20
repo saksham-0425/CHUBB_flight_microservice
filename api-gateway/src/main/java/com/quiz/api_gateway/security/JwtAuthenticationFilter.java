@@ -1,18 +1,19 @@
 package com.quiz.api_gateway.security;
 
-import io.jsonwebtoken.*;
+import io.jsonwebtoken.Jwts;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.cloud.gateway.filter.GatewayFilter;
+import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
-import org.springframework.cloud.gateway.filter.*;
-import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory;
-import org.springframework.http.HttpStatus;
 import reactor.core.publisher.Mono;
 
 @Component
-public class JwtAuthenticationFilter 
-    extends AbstractGatewayFilterFactory<JwtAuthenticationFilter.Config> {
+public class JwtAuthenticationFilter
+        extends AbstractGatewayFilterFactory<JwtAuthenticationFilter.Config> {
 
     @Value("${jwt.secret}")
     private String secret;
@@ -28,42 +29,65 @@ public class JwtAuthenticationFilter
 
         return (exchange, chain) -> {
 
-            if (isAuthRoute(exchange))
+       
+            if (exchange.getRequest().getMethod() == HttpMethod.OPTIONS) {
                 return chain.filter(exchange);
+            }
+
+          
+            if (isPublicRoute(exchange)) {
+                return chain.filter(exchange);
+            }
 
             String token = getAuthHeader(exchange);
 
-            if (token == null)
-                return onError(exchange, "Missing Authorization Header", HttpStatus.UNAUTHORIZED);
+            if (token == null) {
+                return onError(exchange, HttpStatus.UNAUTHORIZED);
+            }
 
             try {
                 Jwts.parser()
                     .setSigningKey(secret.getBytes())
                     .parseClaimsJws(token);
-            } catch(Exception e) {
-                return onError(exchange, "Invalid Token", HttpStatus.UNAUTHORIZED);
+            } catch (Exception e) {
+                return onError(exchange, HttpStatus.UNAUTHORIZED);
             }
 
             return chain.filter(exchange);
         };
     }
 
-    private boolean isAuthRoute(ServerWebExchange exchange) {
-        return exchange.getRequest().getURI().getPath().contains("/auth/");
-    }
 
     private String getAuthHeader(ServerWebExchange exchange) {
         String authHeader = exchange.getRequest()
-                .getHeaders().getFirst(HttpHeaders.AUTHORIZATION);
+                .getHeaders()
+                .getFirst(HttpHeaders.AUTHORIZATION);
 
-        if (authHeader != null && authHeader.startsWith("Bearer "))
+        if (authHeader != null && authHeader.startsWith("Bearer ")) {
             return authHeader.substring(7);
-
+        }
         return null;
     }
 
-    private Mono<Void> onError(ServerWebExchange exchange, String err, HttpStatus status) {
+    private Mono<Void> onError(ServerWebExchange exchange, HttpStatus status) {
+
+       
+        exchange.getResponse().getHeaders().add(
+                "Access-Control-Allow-Origin", "http://localhost:4200");
+        exchange.getResponse().getHeaders().add(
+                "Access-Control-Allow-Headers", "Authorization, Content-Type");
+        exchange.getResponse().getHeaders().add(
+                "Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+
         exchange.getResponse().setStatusCode(status);
         return exchange.getResponse().setComplete();
     }
+    
+    private boolean isPublicRoute(ServerWebExchange exchange) {
+        String path = exchange.getRequest().getURI().getPath();
+
+        return path.startsWith("/auth/")
+            || path.startsWith("/flights/search");
+    }
+
 }

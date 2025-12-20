@@ -1,0 +1,18 @@
+[
+  {
+    "flightNumber": "AI-101",
+    "airline": "Air India",
+    "source": "DEL",
+    "destination": "BOM",
+    "date": "2025-01-10",
+    "availableSeats": 50
+  },
+  {
+    "flightNumber": "SG-203",
+    "airline": "SpiceJet",
+    "source": "BLR",
+    "destination": "DEL",
+    "date": "2025-01-12",
+    "availableSeats": 40
+  }
+]

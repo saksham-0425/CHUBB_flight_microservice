@@ -14,8 +14,9 @@ public class GlobalExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<String> handleOther(Exception ex) {
-        return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                .body("Something went wrong");
+    public ResponseEntity<?> handle(Exception ex) {
+        ex.printStackTrace(); // ADD THIS LINE
+        return ResponseEntity.status(500).body(ex.getMessage());
     }
+
 }
