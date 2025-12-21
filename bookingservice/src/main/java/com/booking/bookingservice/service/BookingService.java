@@ -204,6 +204,8 @@ public class BookingService {
         return booking;
     }
 
-
+    public List<Booking> getAllBookings() {
+        return repository.findAll();
+    }
     
 }

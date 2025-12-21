@@ -49,7 +49,7 @@ public class AuthController {
         user.setName(request.getName());
         user.setEmail(request.getEmail());
         user.setPassword(encoder.encode(request.getPassword()));
-        user.getRoles().add(request.getRole() != null ? request.getRole() : "ROLE_USER");
+        user.getRoles().add("ROLE_USER");
 
         repo.save(user);
         return ResponseEntity.status(201).body("Registered successfully");

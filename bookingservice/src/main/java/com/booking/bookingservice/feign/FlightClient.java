@@ -4,7 +4,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 import com.booking.bookingservice.dto.FlightInternalDTO;
 
-@FeignClient(name = "flightservice", fallback = FlightClientFallback.class)
+@FeignClient(name = "FLIGHTSERVICE", fallback = FlightClientFallback.class)
 public interface FlightClient {
 
     @GetMapping("/flights/internal/{id}/check")

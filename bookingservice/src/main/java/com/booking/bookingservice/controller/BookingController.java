@@ -25,26 +25,28 @@ public class BookingController {
     }
 
     @PostMapping("/create")
-    @Operation(summary = "Create a booking")
     public ResponseEntity<BookingResponse> createBooking(
+            @RequestHeader("X-User-Email") String userEmail,
             @RequestBody BookingRequest req) {
 
-        log.info("Create booking request for flight {}", req.getFlightId());
+        log.info("Create booking request by {}", userEmail);
+
+        req.setEmail(userEmail); // 🔒 enforce ownership
 
         Booking booking = service.bookTicket(req);
 
-        BookingResponse response = new BookingResponse(
-                booking.getPnr(),
-                booking.getFlightId(),
-                booking.getPassengerName(),
-                booking.getEmail(),
-                booking.getSeats(),
-                booking.getStatus(),
-                booking.getBookingDate()
-        );
-
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
+        return ResponseEntity.status(HttpStatus.CREATED)
+                .body(new BookingResponse(
+                        booking.getPnr(),
+                        booking.getFlightId(),
+                        booking.getPassengerName(),
+                        booking.getEmail(),
+                        booking.getSeats(),
+                        booking.getStatus(),
+                        booking.getBookingDate()
+                ));
     }
+
 
 
 
@@ -62,18 +64,37 @@ public class BookingController {
     }
 
     @GetMapping("/history")
-    @Operation(summary = "Get bookings by email")
-    public List<Booking> history(@RequestParam String email) {
-        return service.getBookingsByEmail(email);
+    public List<Booking> history(
+            @RequestParam(required = false) String email,
+            @RequestHeader("X-User-Email") String userEmail,
+            @RequestHeader("X-User-Roles") String roles) {
+
+        if (isAdmin(roles)) {
+            // admin can fetch any user's history
+            return email != null
+                    ? service.getBookingsByEmail(email)
+                    : service.getAllBookings();
+        }
+
+        // user can only see own history
+        return service.getBookingsByEmail(userEmail);
     }
+
     
     @GetMapping("/pnr/{pnr}")
     public ResponseEntity<BookingResponse> getBookingByPnr(
-            @PathVariable String pnr) {
+            @PathVariable String pnr,
+            @RequestHeader("X-User-Email") String userEmail,
+            @RequestHeader("X-User-Roles") String roles) {
 
         Booking booking = service.getBookingByPnr(pnr);
 
-        BookingResponse response = new BookingResponse(
+        // 🔒 Ownership check
+        if (!isAdmin(roles) && !booking.getEmail().equals(userEmail)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
+
+        return ResponseEntity.ok(new BookingResponse(
                 booking.getPnr(),
                 booking.getFlightId(),
                 booking.getPassengerName(),
@@ -81,30 +102,47 @@ public class BookingController {
                 booking.getSeats(),
                 booking.getStatus(),
                 booking.getBookingDate()
-        );
-
-        return ResponseEntity.ok(response);
+        ));
     }
 
     
     @PutMapping("/cancel/pnr/{pnr}")
-    @Operation(summary = "Cancel booking by PNR")
-    public BookingResponse cancelBookingByPnr(@PathVariable String pnr) {
+    public ResponseEntity<BookingResponse> cancelBookingByPnr(
+            @PathVariable String pnr,
+            @RequestHeader("X-User-Email") String userEmail,
+            @RequestHeader("X-User-Roles") String roles) {
 
-        log.info("Cancel booking by PNR {}", pnr);
+        Booking booking = service.getBookingByPnr(pnr);
 
-        Booking booking = service.cancelBookingByPnr(pnr);
+        if (!isAdmin(roles) && !booking.getEmail().equals(userEmail)) {
+            return ResponseEntity.status(HttpStatus.FORBIDDEN).build();
+        }
 
-        return new BookingResponse(
-                booking.getPnr(),
-                booking.getFlightId(),
-                booking.getPassengerName(),
-                booking.getEmail(),
-                booking.getSeats(),
-                booking.getStatus(),
-                booking.getBookingDate()
-        );
+        Booking cancelled = service.cancelBookingByPnr(pnr);
+
+        return ResponseEntity.ok(new BookingResponse(
+                cancelled.getPnr(),
+                cancelled.getFlightId(),
+                cancelled.getPassengerName(),
+                cancelled.getEmail(),
+                cancelled.getSeats(),
+                cancelled.getStatus(),
+                cancelled.getBookingDate()
+        ));
     }
+
+    
+    private String getUserEmailFromHeader(String header) {
+        if (header == null || header.isBlank()) {
+            throw new RuntimeException("Missing user email header");
+        }
+        return header;
+    }
+
+    private boolean isAdmin(String rolesHeader) {
+        return rolesHeader != null && rolesHeader.contains("ROLE_ADMIN");
+    }
+
 
 
 }

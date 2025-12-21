@@ -11,6 +11,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -32,6 +33,7 @@ public class FlightController {
     @ResponseStatus(HttpStatus.CREATED)
     @Operation(summary = "Add a new flight", description = "Creates a new flight record")
     @ApiResponse(responseCode = "201", description = "Flight created successfully")
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping("/add")
     public ResponseEntity<String> addFlight(@Valid @RequestBody Flight flight) {
     	log.info("Request received to add flight");
@@ -78,12 +80,13 @@ public class FlightController {
         log.info("Request received to increase seats for flight {}", id);
         service.increaseSeats(id, count);
     }
-    
+
     @GetMapping("/internal/{id}")
     public Flight getFlightInternal(@PathVariable String id) {
         return service.getFlight(id);
     }
     
+    @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(value = "/upload-json", consumes = "multipart/form-data")
     public ResponseEntity<?> uploadJson(@RequestParam("file") MultipartFile file) {
         try {

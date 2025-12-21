@@ -175,3 +175,109 @@
 2025-12-20 10:08:19 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Fetching config from server at : http://server:8888/
 2025-12-20 10:08:21 INFO  o.s.c.c.c.ConfigServicePropertySourceLocator - Located environment: name=flightservice, profiles=[default], label=null, version=7be84bf1083f395bb49a318fbf0cbf3d214d5d31, state=
 2025-12-20 10:08:21 INFO  o.s.c.b.c.PropertySourceBootstrapConfiguration - Located property source: [BootstrapPropertySource {name='bootstrapProperties-configClient'}, BootstrapPropertySource {name='bootstrapProperties-https://github.com/saksham-0425/CHUBB_quizapp_configserver/flightservice.properties'}]
+2025-12-20 10:08:22 INFO  c.f.f.FlightserviceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-12-20 10:08:22 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Fetching config from server at : http://server:8888/
+2025-12-20 10:08:22 INFO  o.s.c.c.c.ConfigServerConfigDataLoader - Located environment: name=flightservice, profiles=[default], label=null, version=7be84bf1083f395bb49a318fbf0cbf3d214d5d31, state=
+2025-12-20 10:08:51 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2025-12-20 10:08:56 INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 5332 ms. Found 1 MongoDB repository interface.
+2025-12-20 10:09:08 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=daea02f7-6dce-328d-b8b3-b07bc84e18d7
+2025-12-20 10:09:15 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 0 (http)
+2025-12-20 10:09:15 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-20 10:09:15 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-20 10:09:16 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-20 10:09:16 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 53398 ms
+2025-12-20 10:09:24 INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=mongodb:27017, type=STANDALONE, cryptd=false, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=21, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=663947655, minRoundTripTimeNanos=0}
+2025-12-20 10:09:24 INFO  org.mongodb.driver.client - MongoClient with metadata {"driver": {"name": "mongo-java-driver|sync|spring-boot", "version": "5.2.1"}, "os": {"type": "Linux", "name": "Linux", "architecture": "amd64", "version": "5.15.167.4-microsoft-standard-WSL2"}, "platform": "Java/Eclipse Adoptium/17.0.17+10", "env": {"container": {"runtime": "docker"}}} created with settings MongoClientSettings{readPreference=primary, writeConcern=WriteConcern{w=null, wTimeout=null ms, journal=null}, retryWrites=true, retryReads=true, readConcern=ReadConcern{level=null}, credential=MongoCredential{mechanism=null, userName='root', source='admin', password=<hidden>, mechanismProperties=<hidden>}, transportSettings=null, commandListeners=[], codecRegistry=ProvidersCodecRegistry{codecProviders=[ValueCodecProvider{}, BsonValueCodecProvider{}, DBRefCodecProvider{}, DBObjectCodecProvider{}, DocumentCodecProvider{}, CollectionCodecProvider{}, IterableCodecProvider{}, MapCodecProvider{}, GeoJsonCodecProvider{}, GridFSFileCodecProvider{}, Jsr310CodecProvider{}, JsonObjectCodecProvider{}, BsonCodecProvider{}, EnumCodecProvider{}, com.mongodb.client.model.mql.ExpressionCodecProvider@5fc7255c, com.mongodb.Jep395RecordCodecProvider@20a47036, com.mongodb.KotlinCodecProvider@70c205bf]}, loggerSettings=LoggerSettings{maxDocumentLength=1000}, clusterSettings={hosts=[mongodb:27017], srvServiceName=mongodb, mode=SINGLE, requiredClusterType=UNKNOWN, requiredReplicaSetName='null', serverSelector='null', clusterListeners='[]', serverSelectionTimeout='30000 ms', localThreshold='15 ms'}, socketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=0, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, heartbeatSocketSettings=SocketSettings{connectTimeoutMS=10000, readTimeoutMS=10000, receiveBufferSize=0, proxySettings=ProxySettings{host=null, port=null, username=null, password=null}}, connectionPoolSettings=ConnectionPoolSettings{maxSize=100, minSize=0, maxWaitTimeMS=120000, maxConnectionLifeTimeMS=0, maxConnectionIdleTimeMS=0, maintenanceInitialDelayMS=0, maintenanceFrequencyMS=60000, connectionPoolListeners=[], maxConnecting=2}, serverSettings=ServerSettings{heartbeatFrequencyMS=10000, minHeartbeatFrequencyMS=500, serverMonitoringMode=AUTO, serverListeners='[]', serverMonitorListeners='[]'}, sslSettings=SslSettings{enabled=false, invalidHostNameAllowed=false, context=null}, applicationName='null', compressorList=[], uuidRepresentation=JAVA_LEGACY, serverApi=null, autoEncryptionSettings=null, dnsClient=null, inetAddressResolver=null, contextProvider=null, timeoutMS=null}
+2025-12-20 10:09:50 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-20 10:09:55 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-20 10:09:56 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 45941 (http) with context path '/'
+2025-12-20 10:09:56 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 45941
+2025-12-20 10:09:56 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-20 10:09:56 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-20 10:09:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:09:57 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-20 10:09:57 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-20 10:09:57 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-20 10:09:57 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-20 10:09:57 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-20 10:09:57 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-20 10:09:57 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-20 10:09:59 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-20 10:09:59 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-20 10:09:59 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-20 10:09:59 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1766225399164 with initial instances count: 2
+2025-12-20 10:09:59 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application FLIGHTSERVICE with eureka with status UP
+2025-12-20 10:09:59 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766225399243, current=UP, previous=STARTING]
+2025-12-20 10:09:59 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FLIGHTSERVICE/3d6b83faab7b:flightservice:0: registering service...
+2025-12-20 10:09:59 INFO  c.f.f.FlightserviceApplication - Started FlightserviceApplication in 140.32 seconds (process running for 151.91)
+2025-12-20 10:09:59 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FLIGHTSERVICE/3d6b83faab7b:flightservice:0 - registration status: 204
+2025-12-20 10:12:53 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-20 10:12:53 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-20 10:12:53 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 30 ms
+2025-12-20 10:12:56 INFO  c.f.f.controller.FlightController - Request received to add flight
+2025-12-20 10:12:56 INFO  c.f.f.service.FlightService - Adding flight: AI001
+2025-12-20 10:13:38 INFO  c.f.f.controller.FlightController - Search request received for flights LKO -> HYD on 2025-12-21
+2025-12-20 10:13:38 INFO  c.f.f.service.FlightService - Searching flights from LKO to HYD on 2025-12-21
+2025-12-20 10:14:28 INFO  c.f.f.controller.FlightController - Checking availability for flight 694676a9b9ab75368aefadff
+2025-12-20 10:14:41 INFO  c.f.f.controller.FlightController - Checking availability for flight 694676a9b9ab75368aefadff
+2025-12-20 10:14:41 INFO  c.f.f.controller.FlightController - Request received to reduce seats for flight 694676a9b9ab75368aefadff
+2025-12-20 10:14:41 INFO  c.f.f.service.FlightService - Reducing 1 seats from flight 694676a9b9ab75368aefadff
+2025-12-20 10:14:41 INFO  c.f.f.service.FlightService - Successfully reduced seats. Remaining seats: 189
+2025-12-20 10:14:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:19:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:24:52 INFO  c.f.f.controller.FlightController - Request received to add flight
+2025-12-20 10:24:52 INFO  c.f.f.service.FlightService - Adding flight: AI001
+2025-12-20 10:24:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:25:12 INFO  c.f.f.controller.FlightController - Search request received for flights LKO -> HYD on 2025-12-30
+2025-12-20 10:25:12 INFO  c.f.f.service.FlightService - Searching flights from LKO to HYD on 2025-12-30
+2025-12-20 10:26:04 INFO  c.f.f.controller.FlightController - Checking availability for flight 69467974b9ab75368aefae00
+2025-12-20 10:26:04 INFO  c.f.f.controller.FlightController - Request received to reduce seats for flight 69467974b9ab75368aefae00
+2025-12-20 10:26:04 INFO  c.f.f.service.FlightService - Reducing 1 seats from flight 69467974b9ab75368aefae00
+2025-12-20 10:26:04 INFO  c.f.f.service.FlightService - Successfully reduced seats. Remaining seats: 189
+2025-12-20 10:27:09 INFO  c.f.f.controller.FlightController - Request received to increase seats for flight 69467974b9ab75368aefae00
+2025-12-20 10:27:09 INFO  c.f.f.service.FlightService - Increasing 1 seats for flight 69467974b9ab75368aefae00
+2025-12-20 10:27:09 INFO  c.f.f.service.FlightService - Successfully increased seats. New seat count: 190
+2025-12-20 10:29:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:34:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:39:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:44:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:49:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:54:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 10:59:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:04:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:09:57 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:14:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:19:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:24:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:29:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:34:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:39:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:44:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:48:21 INFO  c.f.f.controller.FlightController - Search request received for flights LKO -> HYD on 2025-12-30
+2025-12-20 11:48:21 INFO  c.f.f.service.FlightService - Searching flights from LKO to HYD on 2025-12-30
+2025-12-20 11:49:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:51:23 INFO  c.f.f.controller.FlightController - Search request received for flights LKO -> HYD on 2025-12-21
+2025-12-20 11:51:23 INFO  c.f.f.service.FlightService - Searching flights from LKO to HYD on 2025-12-21
+2025-12-20 11:51:25 INFO  c.f.f.controller.FlightController - Search request received for flights LKO -> HYD on 2025-12-21
+2025-12-20 11:51:25 INFO  c.f.f.service.FlightService - Searching flights from LKO to HYD on 2025-12-21
+2025-12-20 11:51:50 INFO  c.f.f.controller.FlightController - Checking availability for flight 694676a9b9ab75368aefadff
+2025-12-20 11:52:10 INFO  c.f.f.controller.FlightController - Checking availability for flight 694676a9b9ab75368aefadff
+2025-12-20 11:52:10 INFO  c.f.f.controller.FlightController - Request received to reduce seats for flight 694676a9b9ab75368aefadff
+2025-12-20 11:52:10 INFO  c.f.f.service.FlightService - Reducing 1 seats from flight 694676a9b9ab75368aefadff
+2025-12-20 11:52:10 INFO  c.f.f.service.FlightService - Successfully reduced seats. Remaining seats: 188
+2025-12-20 11:54:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 11:59:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 12:04:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 12:09:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 12:14:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 12:19:56 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-20 12:22:59 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Unregistering application FLIGHTSERVICE with eureka with status DOWN
+2025-12-20 12:22:59 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766233379417, current=DOWN, previous=UP]
+2025-12-20 12:22:59 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FLIGHTSERVICE/3d6b83faab7b:flightservice:0: registering service...
+2025-12-20 12:22:59 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FLIGHTSERVICE/3d6b83faab7b:flightservice:0 - registration status: 204
+2025-12-20 12:22:59 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-12-20 12:22:59 INFO  o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-12-20 12:22:59 INFO  c.netflix.discovery.DiscoveryClient - Shutting down DiscoveryClient ...
+2025-12-20 12:23:02 INFO  c.netflix.discovery.DiscoveryClient - Unregistering ...
+2025-12-20 12:23:02 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_FLIGHTSERVICE/3d6b83faab7b:flightservice:0 - deregister  status: 200
+2025-12-20 12:23:02 INFO  c.netflix.discovery.DiscoveryClient - Completed shut down of DiscoveryClient

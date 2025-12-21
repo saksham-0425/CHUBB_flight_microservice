@@ -1,0 +1,107 @@
+2025-12-21 11:29:54 INFO  com.config.server.ServerApplication - The following 1 profile is active: "local"
+2025-12-21 11:29:54 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=96e60c1c-e5d2-3f96-8ec5-03c7ea014ef3
+2025-12-21 11:29:55 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8888 (http)
+2025-12-21 11:29:55 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-21 11:29:55 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-21 11:29:55 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-21 11:29:55 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1047 ms
+2025-12-21 11:29:57 INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-12-21 11:29:58 INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-12-21 11:29:58 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-21 11:30:00 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-21 11:30:00 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-21 11:30:00 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-21 11:30:00 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-21 11:30:01 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-21 11:30:01 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-21 11:30:01 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-21 11:30:01 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1766296801187 with initial instances count: 0
+2025-12-21 11:30:01 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CONFIGSERVER with eureka with status UP
+2025-12-21 11:30:01 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766296801192, current=UP, previous=STARTING]
+2025-12-21 11:30:01 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONFIGSERVER/localhost:configserver:8888: registering service...
+2025-12-21 11:30:01 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2025-12-21 11:30:01 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8888
+2025-12-21 11:30:01 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONFIGSERVER/localhost:configserver:8888 - registration status: 204
+2025-12-21 11:30:02 INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-12-21 11:30:02 INFO  com.config.server.ServerApplication - Started ServerApplication in 11.245 seconds (process running for 11.894)
+2025-12-21 11:30:11 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-21 11:30:11 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-21 11:30:11 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2025-12-21 11:30:12 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\bookingservice-local.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:12 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\bookingservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:13 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\flightservice-local.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:13 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\flightservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:14 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\bookingservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:14 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\flightservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:16 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\bookingservice-local.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:16 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\bookingservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:16 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\flightservice-local.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:16 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-17304531807911986382\flightservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-17304531807911986382/'
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-21 11:30:31 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-21 11:35:00 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-21 11:40:00 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-21 11:47:26 INFO  com.config.server.ServerApplication - The following 1 profile is active: "local"
+2025-12-21 11:47:29 INFO  o.s.cloud.context.scope.GenericScope - BeanFactory id=96e60c1c-e5d2-3f96-8ec5-03c7ea014ef3
+2025-12-21 11:47:30 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8888 (http)
+2025-12-21 11:47:30 INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-12-21 11:47:30 INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.49]
+2025-12-21 11:47:30 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-12-21 11:47:30 INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 3655 ms
+2025-12-21 11:47:36 INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-12-21 11:47:42 INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-12-21 11:47:42 INFO  o.s.c.n.e.c.DiscoveryClientOptionalArgsConfiguration - Eureka HTTP Client uses RestTemplate.
+2025-12-21 11:47:59 WARN  o.s.c.l.c.LoadBalancerCacheAutoConfiguration$LoadBalancerCaffeineWarnLogger - Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-12-21 11:47:59 INFO  o.s.c.n.eureka.InstanceInfoFactory - Setting initial instance status as: STARTING
+2025-12-21 11:47:59 INFO  c.netflix.discovery.DiscoveryClient - Initializing Eureka in region us-east-1
+2025-12-21 11:47:59 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-21 11:48:00 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-21 11:48:00 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-21 11:48:00 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-21 11:48:00 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-21 11:48:00 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-21 11:48:00 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: true
+2025-12-21 11:48:00 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-21 11:48:02 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-21 11:48:02 INFO  c.netflix.discovery.DiscoveryClient - Starting heartbeat executor: renew interval is: 30
+2025-12-21 11:48:02 INFO  c.n.discovery.InstanceInfoReplicator - InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-12-21 11:48:02 INFO  c.netflix.discovery.DiscoveryClient - Discovery Client initialized at timestamp 1766297882835 with initial instances count: 0
+2025-12-21 11:48:02 INFO  o.s.c.n.e.s.EurekaServiceRegistry - Registering application CONFIGSERVER with eureka with status UP
+2025-12-21 11:48:02 INFO  c.netflix.discovery.DiscoveryClient - Saw local status change event StatusChangeEvent [timestamp=1766297882879, current=UP, previous=STARTING]
+2025-12-21 11:48:02 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONFIGSERVER/localhost:configserver:8888: registering service...
+2025-12-21 11:48:03 INFO  o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8888 (http) with context path '/'
+2025-12-21 11:48:03 INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 8888
+2025-12-21 11:48:03 INFO  c.netflix.discovery.DiscoveryClient - DiscoveryClient_CONFIGSERVER/localhost:configserver:8888 - registration status: 204
+2025-12-21 11:48:04 INFO  o.s.cloud.commons.util.InetUtils - Cannot determine local hostname
+2025-12-21 11:48:04 INFO  com.config.server.ServerApplication - Started ServerApplication in 44.737 seconds (process running for 47.146)
+2025-12-21 11:48:04 INFO  o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-12-21 11:48:04 INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-12-21 11:48:04 INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2025-12-21 11:48:06 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-7119227713944071444\bookingservice-local.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-7119227713944071444/'
+2025-12-21 11:48:06 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-7119227713944071444\bookingservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-7119227713944071444/'
+2025-12-21 11:48:07 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-7119227713944071444\bookingservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-7119227713944071444/'
+2025-12-21 11:48:10 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-7119227713944071444\bookingservice-local.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-7119227713944071444/'
+2025-12-21 11:48:10 INFO  o.s.c.c.s.e.NativeEnvironmentRepository - Adding property source: Config resource 'file [C:\Users\KIIT\AppData\Local\Temp\config-repo-7119227713944071444\bookingservice.properties]' via location 'file:/C:/Users/KIIT/AppData/Local/Temp/config-repo-7119227713944071444/'
+2025-12-21 11:48:32 INFO  c.netflix.discovery.DiscoveryClient - Disable delta property : false
+2025-12-21 11:48:32 INFO  c.netflix.discovery.DiscoveryClient - Single vip registry refresh property : null
+2025-12-21 11:48:32 INFO  c.netflix.discovery.DiscoveryClient - Force full registry fetch : false
+2025-12-21 11:48:32 INFO  c.netflix.discovery.DiscoveryClient - Application is null : false
+2025-12-21 11:48:32 INFO  c.netflix.discovery.DiscoveryClient - Registered Applications size is zero : true
+2025-12-21 11:48:32 INFO  c.netflix.discovery.DiscoveryClient - Application version is -1: false
+2025-12-21 11:48:32 INFO  c.netflix.discovery.DiscoveryClient - Getting all instance registry info from the eureka server
+2025-12-21 11:48:33 INFO  c.netflix.discovery.DiscoveryClient - The response status is 200
+2025-12-21 11:53:00 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+2025-12-21 11:58:00 INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
