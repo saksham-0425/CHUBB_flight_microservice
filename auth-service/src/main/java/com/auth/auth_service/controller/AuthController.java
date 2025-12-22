@@ -8,6 +8,7 @@ import com.auth.auth_service.service.CustomUserDetailsService;
 import lombok.*;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.*;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
@@ -70,5 +71,36 @@ public class AuthController {
         String token = jwtService.generateToken(user);
 
         return ResponseEntity.ok(new AuthResponse(token));
+    }
+    
+    @PutMapping("/change-password")
+    public ResponseEntity<?> changePassword(
+            @RequestBody ChangePasswordRequest request,
+            Authentication authentication
+    ) {
+        // 🔒 This will ONLY exist if user is logged in
+        String email = authentication.getName();
+
+        AppUser user = repo.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("User not found"));
+
+        
+        if (!user.getRoles().contains("ROLE_USER")) {
+            return ResponseEntity
+                    .status(403)
+                    .body("Only normal users can change password");
+        }
+
+        if (!encoder.matches(request.getOldPassword(), user.getPassword())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body("Old password is incorrect");
+        }
+
+       
+        user.setPassword(encoder.encode(request.getNewPassword()));
+        repo.save(user);
+
+        return ResponseEntity.ok("Password changed successfully");
     }
 }

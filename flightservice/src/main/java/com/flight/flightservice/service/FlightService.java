@@ -92,5 +92,26 @@ public class FlightService {
             throw new RuntimeException("Invalid JSON format. Upload failed.");
         }
     }
+    
+    public List<Flight> getAllFlights() {
+        return repository.findAll();
+    }
+    public void updateFlight(String id, Flight updated) {
+        Flight existing = getFlight(id);
+
+        existing.setAirline(updated.getAirline());
+        existing.setSource(updated.getSource());
+        existing.setDestination(updated.getDestination());
+        existing.setDate(updated.getDate());
+        existing.setAvailableSeats(updated.getAvailableSeats());
+
+        repository.save(existing);
+    }
+    
+    public void deleteFlight(String id) {
+        repository.deleteById(id);
+    }
+
+    
 }
 

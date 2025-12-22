@@ -93,7 +93,10 @@ public class JwtAuthenticationFilter
 
     private boolean isPublicRoute(ServerWebExchange exchange) {
         String path = exchange.getRequest().getURI().getPath();
-        return path.startsWith("/auth/")
+
+        return path.equals("/auth/login")
+            || path.equals("/auth/register")
             || path.startsWith("/flights/search");
     }
+
 }

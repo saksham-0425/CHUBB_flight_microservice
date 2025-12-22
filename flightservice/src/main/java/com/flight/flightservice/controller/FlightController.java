@@ -98,7 +98,45 @@ public class FlightController {
             return ResponseEntity.status(500).body("Failed to process JSON file");
         }
     }
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/admin/all")
+    public List<Flight> getAllFlights() {
+        log.info("Admin requested all flights");
+        return service.getAllFlights();
+    }
+    
+    @PreAuthorize("hasRole('ADMIN')")
+    @GetMapping("/admin/{id}")
+    public Flight getFlightById(@PathVariable String id) {
+        log.info("Admin requested flight {}", id);
+        return service.getFlight(id);
+    }
 
+    @PreAuthorize("hasRole('ADMIN')")
+    @PutMapping("/admin/{id}")
+    public ResponseEntity<?> updateFlight(
+            @PathVariable String id,
+            @Valid @RequestBody Flight updatedFlight) {
+
+        if (updatedFlight.getSource()
+                .equalsIgnoreCase(updatedFlight.getDestination())) {
+            return ResponseEntity
+                    .badRequest()
+                    .body("Source and destination cannot be same");
+        }
+
+        service.updateFlight(id, updatedFlight);
+        return ResponseEntity.ok("Flight updated successfully");
+    }
+
+    @PreAuthorize("hasRole('ADMIN')")
+    @DeleteMapping("/admin/{id}")
+    public ResponseEntity<?> deleteFlight(@PathVariable String id) {
+        log.info("Admin deleting flight {}", id);
+        service.deleteFlight(id);
+        return ResponseEntity.ok("Flight deleted successfully");
+    }
 
 
 }
