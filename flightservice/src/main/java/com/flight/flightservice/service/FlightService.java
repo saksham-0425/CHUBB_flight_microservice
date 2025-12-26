@@ -76,7 +76,7 @@ public class FlightService {
             String content = new String(file.getBytes(), StandardCharsets.UTF_8);
 
             ObjectMapper mapper = new ObjectMapper();
-            mapper.findAndRegisterModules();   // handles date/time well
+            mapper.findAndRegisterModules();   
 
             List<Flight> flights = mapper.readValue(
                     content,

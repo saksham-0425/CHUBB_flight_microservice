@@ -7,7 +7,7 @@ import lombok.Data;
 public class PnrGenerator {
 
     private PnrGenerator() {
-        // prevent object creation
+       
     }
 
     public static String generate() {

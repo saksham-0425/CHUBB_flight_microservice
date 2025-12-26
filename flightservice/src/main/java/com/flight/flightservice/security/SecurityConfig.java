@@ -26,12 +26,19 @@ public class SecurityConfig {
                 UsernamePasswordAuthenticationFilter.class
             )
             .authorizeHttpRequests(auth -> auth
-            	    .requestMatchers(
-            	        "/flights/search",
-            	        "/flights/internal/**"   // ⭐ REQUIRED
-            	    ).permitAll()
-            	    .anyRequest().authenticated()
-            	);
+
+               
+                .requestMatchers("/flights/search").permitAll()
+
+                
+                .requestMatchers("/flights/internal/**").permitAll()
+
+               
+                .requestMatchers("/flights/*/seats/**").permitAll()
+
+               
+                .anyRequest().authenticated()
+            );
 
         return http.build();
     }

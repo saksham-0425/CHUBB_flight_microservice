@@ -2,6 +2,7 @@ package com.flight.flightservice.controller;
 
 import com.flight.flightservice.dto.FlightResponseDTO;
 import com.flight.flightservice.model.Flight;
+import com.flight.flightservice.model.Seat;
 import com.flight.flightservice.service.FlightService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -137,6 +138,7 @@ public class FlightController {
         service.deleteFlight(id);
         return ResponseEntity.ok("Flight deleted successfully");
     }
-
+    
+    
 
 }

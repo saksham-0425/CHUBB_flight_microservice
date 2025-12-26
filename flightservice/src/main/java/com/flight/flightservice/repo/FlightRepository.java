@@ -4,9 +4,11 @@ import com.flight.flightservice.model.Flight;
 import org.springframework.data.mongodb.repository.MongoRepository;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface FlightRepository extends MongoRepository<Flight, String> {
 
     List<Flight> findBySourceAndDestinationAndDate(String source, String destination, String date);
+    Optional<Flight> findByFlightNumber(String flightNumber);
 
 }
