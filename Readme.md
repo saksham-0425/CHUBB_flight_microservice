@@ -1,4 +1,4 @@
-# Flight Booking Microservices
+# Flight Booking Microservice
 
 ### ( Logs folder (within repo) and screenshots (within readme) have been attached with the project ).
 
